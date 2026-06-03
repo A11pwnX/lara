@@ -198,8 +198,12 @@ struct SystemColor: View {
                         }
                     }
                 } footer: {
-                    Text("[Respring](https://roooot.dev/respring.html) to apply. \n")
-                    + Text(status)
+                    VStack(alignment: .leading, spacing: 4) {
+                        Button("Respring to apply.") {
+                            mgr.respring()
+                        }
+                        Text(status)
+                    }
                 }
                 
                 Section {
